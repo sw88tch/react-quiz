@@ -23,5 +23,4 @@ const Question = ({ questions }) => {
         </div>
     );
 };
-
 export default Question;

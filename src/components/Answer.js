@@ -21,5 +21,4 @@ const Answer = ({
         </div>
     );
 };
-
 export default Answer;

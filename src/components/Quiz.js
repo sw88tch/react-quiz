@@ -1,4 +1,4 @@
-import { useContext, useEffect, useReducer } from "react";
+import { useContext, useEffect } from "react";
 import Question from "./Question";
 import { QuizContext } from "../contexts/quiz";
 

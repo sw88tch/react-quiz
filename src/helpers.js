@@ -22,5 +22,5 @@ export const normalizeQuestions = backendQuestions => {
             question: decodeURIComponent(backendQuestion.question),
             incorrectAnswers
         }
-    })
+    });
 }

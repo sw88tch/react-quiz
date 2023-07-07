@@ -29,7 +29,7 @@ const reducer = (state, action) => {
                 : state.currentQuestionIndex + 1;
             const answers = showResults
                 ? []
-                : shuffleAnswers(state.questions[currentQuestionIndex])
+                : shuffleAnswers(state.questions[currentQuestionIndex]);
             // В таком виде запрещено использовать, тк код мутирует, а нужно возвращение нового объекта
             // state.currentQuestionIndex = state.currentQuestionIndex + 1
             return {
