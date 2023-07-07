@@ -21,21 +21,21 @@ const Quiz = () => {
         <div className="quiz">
             {quizState.showResults && (
                 <div className="results">
-                    <div className="congratulations">Поздравляем!</div>
+                    <div className="congratulations">Congratulations!</div>
                     <div className="results-info">
-                        <div>Вы завершили игру</div>
-                        <div>Правильные ответы: {quizState.correctAnswersCount} из {quizState.questions.length}</div>
+                        <div>You have completed the game.</div>
+                        <div>Correct answers: {quizState.correctAnswersCount} of {quizState.questions.length}</div>
                         <div className="next-button"
-                            onClick={() => dispatch({ type: "RESTART" })}>Начать заново</div>
+                            onClick={() => dispatch({ type: "RESTART" })}>Restart Quiz</div>
                     </div>
                 </div>
             )}
             {!quizState.showResults && quizState.questions.length > 0 && (
                 <div>
-                    <div className="score">Вопрос {quizState.currentQuestionIndex + 1}/{quizState.questions.length}</div>
+                    <div className="score">Question {quizState.currentQuestionIndex + 1}/{quizState.questions.length}</div>
                     <Question />
                     <div className="next-button"
-                        onClick={() => dispatch({ type: "NEXT_QUESTION" })}>Следующий вопрос</div>
+                        onClick={() => dispatch({ type: "NEXT_QUESTION" })}>Next question</div>
                 </div>
             )}
         </div>
