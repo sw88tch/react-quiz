@@ -7,7 +7,7 @@ const ButtonRow = styled('div')(ButtonOutfits);
 
 const renderButtonRow = (buttonNumbers, onStartQuiz, buttonStyles) => (
   <ButtonRow>
-    {buttonNumbers.map((number) => (
+    {buttonNumbers?.map((number) => (
       quizButton(number, onStartQuiz, buttonStyles)
     ))}
   </ButtonRow>

@@ -1,9 +1,9 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom/client'; 
+import store from './redux/entries/store';
+import { Provider } from 'react-redux';
 import Quiz from './components/pages/Quiz'; 
 import { QuizProvider } from './redux/reducers/quizReducer';
-import { Provider } from 'react-redux';
-import store from './redux/entries/store';
  
 const root = ReactDOM.createRoot(document.getElementById('root')); 
  

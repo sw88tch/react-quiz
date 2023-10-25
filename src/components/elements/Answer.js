@@ -1,8 +1,8 @@
 import React from 'react';
+import Paper from '@mui/material/Paper';
 import { AnswerText } from '../../styles/fonts/answers/AnswerText';
 import { AnswerBoxContainer } from '../../styles/fonts/answers/AnswerBoxContainer';
 import { LetterMapBox } from '../../styles/fonts/answers/LetterMapBox';
-import Paper from '@mui/material/Paper';
 import { getAnswerClass } from '../../utils/answerClass';
 
 const Answer = ({ answerText, onSelectAnswer, index, currentAnswer, correctAnswer }) => {
