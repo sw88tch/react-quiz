@@ -12,9 +12,9 @@ const Question = () => {
     <div>
       <QuestionContainer>{currentQuestion.question}</QuestionContainer>
       <AnswersContainer>
-        {answers.map((answer, index) => (
+        {answers?.map((answer, index) => (
           <Answer
-            key={index}
+            key={answer}
             index={index}
             answerText={answer}
             correctAnswer={currentQuestion.correctAnswer}

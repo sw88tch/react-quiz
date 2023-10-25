@@ -1,7 +1,7 @@
 import React from "react";
-import { Paper } from "@mui/material";
+import Paper from "@mui/material";
 import { NextButton } from "../../styles/buttons/NextButton";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const NextAndRestartButton = ({ onClick, children }) => {
   return (
@@ -11,9 +11,9 @@ const NextAndRestartButton = ({ onClick, children }) => {
   );
 };
 
-// NextAndRestartButton.propTypes = {
-//   onClick: PropTypes.func.isRequired,
-//   children: PropTypes.node.isRequired,
-// };
+NextAndRestartButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default NextAndRestartButton;

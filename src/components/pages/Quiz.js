@@ -12,6 +12,7 @@ import { NextButton } from "../../styles/buttons/NextButton";
 import CongratulationsHeader from "../result/CongratulationsHeader"
 import ResultInfoContainer from "../result/ResultInfoContainer";
 import ScoreContainer from "../result/ScoreContainer";
+import { setNumQuestions } from "../../redux/actions/setNumQuestions";
 
 const Quiz = () => {
   const dispatch = useDispatch();
@@ -23,15 +24,16 @@ const Quiz = () => {
   const [showStartPage, setShowStartPage] = useState(true);
 
   useEffect(() => {
-    if (questions.length > 0) {
+    if (questions?.length > 0) {
       return;
     }
     loadQuizData().then((loadedQuestions) => {
       dispatch(loadedQuestion(loadedQuestions));
     });
-  }, [dispatch, questions.length]);
+  }, [dispatch, questions?.length]);
 
   const startQuiz = (numQuestions) => {
+    dispatch(setNumQuestions(numQuestions));
     loadQuizData(numQuestions).then((loadedQuestions) => {
       dispatch(loadedQuestion(loadedQuestions));
       setShowStartPage(false);
@@ -40,6 +42,7 @@ const Quiz = () => {
 
   const restartQuiz = () => {
     dispatch(restart());
+    dispatch(setNumQuestions(null));
     setShowStartPage(true);
   };
 
@@ -47,22 +50,22 @@ const Quiz = () => {
     return <StartPage onStartQuiz={startQuiz} />;
   }
 
-  if (showResults && questions.length > 0) {
+  if (showResults && questions?.length > 0) {
     return (
       <QuizContainer>
         <ResultsContainer>
           <CongratulationsHeader />
-          <ResultInfoContainer correctAnswerCount={correctAnswersCount} questionsLength={questions.length} />
+          <ResultInfoContainer correctAnswerCount={correctAnswersCount} questionsLength={questions?.length} />
           <NextButton onClick={restartQuiz}>Restart Quiz</NextButton>
         </ResultsContainer>
       </QuizContainer>
     );
   }
 
-  if (!showResults && questions.length > 0) {
+  if (!showResults && questions?.length > 0) {
     return (
       <QuizContainer>
-        <ScoreContainer currentQuestionIndex={currentQuestionIndex} questionsLength={questions.length} />
+        <ScoreContainer currentQuestionIndex={currentQuestionIndex} questionsLength={questions?.length} />
         <Question />
         <NextButton onClick={() => dispatch(nextQuestion())}>Next question</NextButton>
       </QuizContainer>

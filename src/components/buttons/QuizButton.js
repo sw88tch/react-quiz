@@ -1,6 +1,6 @@
-import React from 'react';
-import { Button } from '@mui/material';
-import Paper from '@mui/material/Paper';
+import React from "react";
+import Button from "@mui/material/Button";
+import Paper from "@mui/material/Paper";
 
 const quizButton = (number, onStartQuiz, buttonStyles) => (
   <Button
